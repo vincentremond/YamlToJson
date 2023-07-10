@@ -7,7 +7,10 @@ module YamlToJson =
 
     let convert (input: string) =
         let yaml = YamlDotNet.Serialization.Deserializer().Deserialize(input)
-        let json = Newtonsoft.Json.JsonConvert.SerializeObject(yaml, Newtonsoft.Json.Formatting.Indented)
+
+        let json =
+            Newtonsoft.Json.JsonConvert.SerializeObject(yaml, Newtonsoft.Json.Formatting.Indented)
+
         json
 
 module Program =
